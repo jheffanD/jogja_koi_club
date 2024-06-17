@@ -1,0 +1,61 @@
+
+
+# Set up networks
+networks:
+  react-net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.99.0/24
+          gateway: 172.20.99.1
+    internal: false
+  
+  data-net:
+    driver: host  #jangan pakai bridge,soalnya akan tetap terkonek pada host(tapi tidak kelihatan karena tidak di exposes), tapi pakai host
+    ipam:
+      driver: default
+      config: 
+        - subnet: 172.20.100.0/24
+          gateway: 172.20.100.1
+    internal: true 
+  
+
+# Set up services
+services:
+  front:
+    container_name: "front-koi"   
+    build: 
+      context: .                
+      dockerfile: ./dockerfile/Dockerfile.node
+      no_cache: true            
+    restart: always             
+    volumes:
+      - .:/app                     
+      - /app/node_modules
+    networks:   
+      - data-net
+      - react-net
+    develop:
+      watch:
+        - path: ./src/pages
+          action: sync
+          target: /app
+          ignore: 
+            - node_modules/
+
+  nginx:
+    container_name: "web-server-koi"
+    build:
+      context: .
+      dockerfile: ./dockerfile/Dockerfile.nginx
+      no_cache: true 
+    ports:
+      - "8080:80"
+    restart: always
+    volumes:
+      - ./build:/usr/share/nginx/html
+    depends_on:
+      - front
+    networks:
+      - react-net
