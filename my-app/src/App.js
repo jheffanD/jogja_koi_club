@@ -1,9 +1,10 @@
-
+import RootLayout from "./layout";
+import Dasboard from "./pages/dasboard/pages"
 function App() {
   return (
-    <div className="App">
-    
-    </div>
+   <RootLayout>
+    <Dasboard/>
+   </RootLayout>
   );
 }
 
