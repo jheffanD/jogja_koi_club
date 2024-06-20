@@ -12,12 +12,7 @@ networks:
     internal: false
   
   data-net:
-    driver: host  #jangan pakai bridge,soalnya akan tetap terkonek pada host(tapi tidak kelihatan karena tidak di exposes), tapi pakai host
-    ipam:
-      driver: default
-      config: 
-        - subnet: 172.20.100.0/24
-          gateway: 172.20.100.1
+    driver: bridge  #jangan pakai bridge,soalnya akan tetap terkonek pada host(tapi tidak kelihatan karena tidak di exposes), tapi pakai host
     internal: true 
   
 
@@ -38,7 +33,7 @@ services:
       - react-net
     develop:
       watch:
-        - path: ./src/pages
+        - path: ./src
           action: sync
           target: /app
           ignore: 
