@@ -28,6 +28,7 @@ module.exports = {
       },
       colors:{
         customMaroon: 'rgba(128, 0, 0, 1)',
+        produk:'rgba(49, 49, 49, 1)',
       }
     },
   },

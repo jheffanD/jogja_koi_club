@@ -8,7 +8,7 @@ export default function Header() {
         alt='Ikan Koi'
         className='w-full h-auto max-w-[93rem] max-h-[80rem] '
       />
-      <div className='absolute inset-60 flex justify-between items-center font-poppins '>
+      <div className='absolute inset-[23rem] flex justify-between items-center font-poppins '>
         <div className='text-white text-[75px] font-bold text-left max-w-full leading-tight '>
           <h1 className='animate-fadeInUp '>KEPUTUSAN YANG</h1>
           <h1 className='text-red-600 underline animate-fadeInUp'>TERAKTIK</h1>

@@ -2,6 +2,7 @@ import Nav from "../../componen/navbar";
 import Head from "../header/header"
 import About from "../about/about";
 import List from "../listikan/list";
+import Search from "../search/search";
 
 export default function dasboart (){
     return(
@@ -10,6 +11,7 @@ export default function dasboart (){
         <Head/>
         <About/>
         <List/>
+        <Search/>
         </div>
     );
 }
