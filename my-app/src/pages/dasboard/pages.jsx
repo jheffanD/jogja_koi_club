@@ -3,6 +3,7 @@ import Head from "../header/header"
 import About from "../about/about";
 import List from "../listikan/list";
 import Search from "../search/search";
+import Footer from "../../componen/footer";
 
 export default function dasboart (){
     return(
@@ -12,6 +13,7 @@ export default function dasboart (){
         <About/>
         <List/>
         <Search/>
+        <Footer/>
         </div>
     );
 }
