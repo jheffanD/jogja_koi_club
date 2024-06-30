@@ -1,12 +1,14 @@
-import './index.css'
+import './index.css';
 import React from 'react';
-import Dasboart from './pages/dasboard/pages';
+import Nav from './componen/navbar';
+import Footer from './componen/footer';
 
 const RootLayout = ({ children }) => {
   return (
     <div>
-      <Dasboart />
+      <Nav />
       <main>{children}</main>
+      <Footer/>
     </div>
   );
 };
