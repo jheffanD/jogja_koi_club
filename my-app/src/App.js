@@ -7,6 +7,7 @@ import List from "./pages/listikan/list";
 import Rekomendasi from "./pages/rekomendasi/rekomendasi";
 import Detailikan from "./pages/listikan/detailikan";
 
+
 function App() {
   return (
     <Router>
