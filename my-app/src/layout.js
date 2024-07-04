@@ -1,9 +1,16 @@
-import './index.css'
+import './index.css';
+import React from 'react';
+import Nav from './componen/navbar';
+import Footer from './componen/footer';
 
-export default function RootLayout({ children }) {
-    return (
-      <html lang="en">
-        <body>{children}</body>
-      </html>
-    )
-  }
+const RootLayout = ({ children }) => {
+  return (
+    <div>
+      <Nav />
+      <main>{children}</main>
+      <Footer/>
+    </div>
+  );
+};
+
+export default RootLayout;

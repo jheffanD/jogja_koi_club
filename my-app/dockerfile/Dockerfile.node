@@ -17,6 +17,9 @@ COPY . .
 # Membangun aplikasi untuk produksi
 RUN npm run build
 
+# membagun router penghubung
+RUN npm i react-router-dom
+
 # Stage 2: Serve the application
 FROM node:18-alpine
 
