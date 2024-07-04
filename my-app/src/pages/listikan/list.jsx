@@ -1,4 +1,6 @@
+import React from "react";
 import logo from "/home/jeffan-ganteng/Documents/docker/cloud/koi-club/my-app/src/asset/Product.svg";
+import { Link } from "react-router-dom";
 
 export default function list() {
   return (
@@ -18,7 +20,7 @@ export default function list() {
               <h3 className='font-extralight'>putih dan hitam/merah</h3>
               <h2 className='font-bold'>Rp.500.00</h2>
               <button className='mt-4 py-3 px-5 border  rounded-lg'>
-                Lihat Detail
+                <Link to='/Detailikan'>Lihat Detail</Link>
               </button>
             </div>
           </div>
